@@ -4,6 +4,8 @@ import { prisma } from '../utils/db';
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import { redirect } from 'next/navigation';
 import { BlogPostCard } from '@/components/general/BlogPostCard';
+
+export const revalidate = 7200;
 async function getData(userId: string) {
     const data = await prisma.blogPost.findMany({
         where: {
