@@ -1,4 +1,3 @@
-import { title } from "process";
 import { prisma } from "./utils/db";
 import { BlogPostCard } from "@/components/general/BlogPostCard";
 import { Suspense } from "react";
@@ -37,7 +36,7 @@ async function BlogPosts() {
   const data = await getData();
   return (
     <div className="grid gtid-cols-1 md:grid-grid-col-2 lg:grid-cols-3 gap-4">
-      {data.map((item, index) => (
+      {data.map((item) => (
         <BlogPostCard data={item} key={item.id} />
       ))}
     </div>

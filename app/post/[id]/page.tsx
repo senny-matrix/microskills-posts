@@ -1,11 +1,9 @@
 import { prisma } from "@/app/utils/db";
 import { buttonVariants } from "@/components/ui/button";
-import { promises } from "dns";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
-import { Skeleton } from "@/components/ui/skeleton";
 
 async function getData(id: string) {
   const data = await prisma.blogPost.findUnique({
