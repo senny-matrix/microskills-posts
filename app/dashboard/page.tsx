@@ -25,7 +25,7 @@ export default async function DashboardRoute(){
         redirect("/");
     }
 
-    const data = await getData(user.id);
+    const data = await getData(user?.id);
     return (
         <div className="dashboard">
             <div className="flex items-center justify-between mb-4">
